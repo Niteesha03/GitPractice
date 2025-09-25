@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        }
+        h1 {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 3rem;
+            color: #4f46e5;
+            background: #fff;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 24px rgba(79,70,229,0.08);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="welcome-message"></h1>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name') || '';
+        document.getElementById('welcome-message').textContent = `Welcome ${name}`;
+    </script>
+</body>
+</html>

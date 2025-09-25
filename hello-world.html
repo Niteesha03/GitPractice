@@ -26,5 +26,18 @@
 </head>
 <body>
     <h1>Hello World</h1>
+    <form id="nameForm" style="margin-top:2rem; display:flex; flex-direction:column; align-items:center;">
+        <input type="text" id="userName" name="userName" placeholder="Enter your name" style="padding:0.5rem 1rem; font-size:1.2rem; border-radius:0.5rem; border:1px solid #c7d2fe; margin-bottom:1rem; width:250px;">
+        <button type="submit" style="padding:0.5rem 2rem; font-size:1.2rem; background:#4f46e5; color:#fff; border:none; border-radius:0.5rem; cursor:pointer;">Go</button>
+    </form>
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('userName').value.trim();
+            if(name) {
+                window.location.href = `welcome.html?name=${encodeURIComponent(name)}`;
+            }
+        });
+    </script>
 </body>
 </html>
